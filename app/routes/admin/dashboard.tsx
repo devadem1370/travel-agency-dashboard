@@ -4,7 +4,7 @@ import React from 'react'
 const Dashboard = () => {
   const user = {name: "Adil"}
   return (
-    <main className='dashboard wrapper'>
+    <main className='dashboard '>
       <Header
       title= {`welcome ${user?.name ?? "Guest"}`}
       description = "Track activity, trends and popular destinations in real tieme"
