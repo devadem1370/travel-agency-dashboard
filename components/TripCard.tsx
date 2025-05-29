@@ -1,10 +1,14 @@
-import { Link, useLocation } from "react-router";
-import {
-  ChipDirective,
-  ChipListComponent,
-  ChipsDirective,
-} from "@syncfusion/ej2-react-buttons";
-import { cn, getFirstWord } from "~/lib/utils";
+// TripCard.tsx
+
+type TripCardProps = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  location: string;
+  tags: string[];
+  price: string;
+  onClick?: () => void; // <- new
+};
 
 const TripCard = ({
   id,
@@ -13,50 +17,27 @@ const TripCard = ({
   location,
   tags,
   price,
+  onClick,
 }: TripCardProps) => {
-  const path = useLocation();
   return (
-    <Link
-      to={
-        path.pathname === "/" || path.pathname.startsWith("/travel")
-          ? `/travel/${id}`
-          : `/trips/${id}`
-      }
-      className="trip-card"
+    <div
+      onClick={onClick}
+      className="cursor-pointer trip-card rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-white"
     >
-      <img src={imageUrl} alt={name} />
-      <article>
-        <h2 className="">{name}</h2>
-        <figure>
-          <img
-            src="/assets/icons/location-mark.svg"
-            alt="location"
-            className="size-4"
-          />
+      <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
+
+      <article className="p-4">
+        <h2 className="text-lg font-semibold text-gray-900 mb-1">{name}</h2>
+        <figure className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+          <img src="/assets/icons/location-mark.svg" alt="location" className="size-4" />
           <figcaption>{location}</figcaption>
         </figure>
       </article>
 
-      <div className="mt-5 pl-[18px] pr-3.5 pb-5">
-        <ChipListComponent id="travel-chip">
-            <ChipsDirective>
-                {tags.map((tag, index) => (
-                    <ChipDirective
-                    key={index}
-                    text={getFirstWord(tag)}
-                    cssClass={cn(index === 1 ? '!bg-pink-50 !text-pink-500' : '!bg-success-50 !text-success-700')}
-
-                    />
-
-                ))}
-            </ChipsDirective>
-        </ChipListComponent>
-      </div>
-
-      <article className="tripCard-pill">
-        {price}
+      <article className="tripCard-pill absolute top-3 right-3 bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full shadow">
+        ${price}
       </article>
-    </Link>
+    </div>
   );
 };
 

@@ -1,4 +1,6 @@
 import { Featured, Hero, Navbar } from 'components'
+import Footer from 'components/Footer'
+import Handpicked from 'components/Handpicked'
 import React from 'react'
 
 const Home = () => {
@@ -15,6 +17,8 @@ const Home = () => {
 </div>
 <div className="mx-[130px]">
   <Featured/>
+  <Handpicked/>
+  <Footer/>
 
 </div>
     </>
