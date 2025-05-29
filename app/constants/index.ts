@@ -220,3 +220,17 @@ export const RIGHT_CONFETTI = {
       status: "admin",
     },
   ];
+
+
+
+
+
+
+  export const featured = [
+    {id:1, name: 'Barcelona Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-1.png'},
+    {id:1, name: 'Australia   Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-2.png'},
+    {id:1, name: 'Barcelona Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-3.png'},
+    {id:1, name: 'Barcelona Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-4.png'},
+    {id:1, name: 'Barcelona Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-5.png'},
+    {id:1, name: 'Barcelona Tour', activities:"196 Activities" , rating: '3.5', image: '/assets/images/card-img-6.png'},
+  ]

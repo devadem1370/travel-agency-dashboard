@@ -1,8 +1,9 @@
-import { Hero, Navbar } from 'components'
+import { Featured, Hero, Navbar } from 'components'
 import React from 'react'
 
 const Home = () => {
   return (
+    <>
     <div
   className=" px-[130px] bg-cover bg-center bg-no-repeat min-h-screen"
   style={{
@@ -12,6 +13,11 @@ const Home = () => {
   <Navbar />
   <Hero />
 </div>
+<div className="mx-[130px]">
+  <Featured/>
+
+</div>
+    </>
 
 
   )
